@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Other
+*.log
+*.xlsx
+*.xls
+*.csv
