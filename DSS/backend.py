@@ -11,6 +11,7 @@ import re
 from matrixviewer2 import MatrixViewer2
 from backendcalculation_df import matrixchoose
 from itertools import zip_longest
+import os
 
 class BackEnd:
     def __init__(self, main_window, toplevel_window, data, matrixdata, columndata, rowdata):
@@ -55,10 +56,14 @@ class BackEnd:
 
         self.entry_widgets = []
 
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        TABLES_DIR = os.path.join(BASE_DIR, "..", "Tables")
+
         self.file_paths = [
-            "C:/Users/maks/Desktop/Диплом/Tables/_01_оцінки_промислові_викиди.xlsx",
-            "C:/Users/maks/Desktop/Диплом/Tables/_03_оцінки_стічні_води.xlsx",
-            "C:/Users/maks/Desktop/Диплом/Tables/_05_оцінки_надмірне_використання_хімікатів.xlsx",
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
         ]
         self.tableamount = len(self.file_paths)
 

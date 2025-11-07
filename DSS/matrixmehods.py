@@ -8,6 +8,7 @@ from PIL import Image, ImageTk
 from collections import defaultdict
 import numpy as np
 from finalresults import MatrixViewer2
+import os
 
 class MatrixMethods:
     def __init__(self, parent, toplevel, consequences, recal):
@@ -50,10 +51,14 @@ class MatrixMethods:
         notebook = ttk.Notebook(self.root)
         notebook.pack(fill='both', expand=True)
 
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        TABLES_DIR = os.path.join(BASE_DIR, "..", "Tables")
+
         self.file_paths = [
-            "C:/Users/maks/Desktop/Диплом/Tables/13_Методи_запобіг_промислові_викиди.xlsx",
-            "C:/Users/maks/Desktop/Диплом/Tables/14_Методи_запобіг_стічні_води.xlsx",
-            "C:/Users/maks/Desktop/Диплом/Tables/15_Методи_запобіг_надмірне_використання_хімікатів.xlsx"
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
         ]
 
         self.tableamount = len(self.consequences)

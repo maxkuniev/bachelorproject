@@ -13,6 +13,7 @@ from backendcalculation_df import search_r
 import threading
 import queue
 import time
+import os
 
 
 class MatrixViewer2:
@@ -51,10 +52,14 @@ class MatrixViewer2:
         notebook = ttk.Notebook(self.root)
         notebook.pack(fill='both', expand=True)
 
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        TABLES_DIR = os.path.join(BASE_DIR, "..", "Tables")
+
         self.file_paths = [
-            "C:/Users/maks/Desktop/Диплом/Tables/7_Наслідки_Промислові_викиди.xlsx",
-            "C:/Users/maks/Desktop/Диплом/Tables/9_Наслідки_Стічні_Води.xlsx",
-            "C:/Users/maks/Desktop/Диплом/Tables/11_Наслідки_Надмірне_використання_хімікатів.xlsx"
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
+            os.path.join(TABLES_DIR, "example_table.xlsx"),
         ]
 
         self.tableamount = len(self.file_paths)
